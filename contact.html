@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forrest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6453631f28.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <nav class="nav">
+</nav>
+    <header class="header-contact">
+        <h1>Kontakt</h1>
+    </header>
+    <main>
+        <div class="content-contact">
+            <div class="content-contact__form">
+                <h2>Napisz do nas!</h2>
+                <form action="">
+                    <label for="name">Twoje imię</label>
+                    <input type="text" name="name">
+
+                    <label for="email">Adres e-mail</label>
+                    <input type="email" name="email">
+
+                    <label for="textarea">Wiadomość</label>
+                    <textarea type="text" name="textarea"></textarea>
+
+                    <button class="form-btn">Wyślij</button>
+                </form>
+            </div>
+            <div class="content-contact__map">
+                <div class="content-contact__text">
+                    <P><span>Telefon: </span>+48 123 142 123</P>
+                    <P><span>Email: </span>forest@mail.com</P>
+                    <P><span>Adres: </span>ul. szybka 2/43 02-300 Kraków</P>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+    <div class="footer__bar">
+        <p class="footer__header mark">
+            <i class="fa fa-tree" aria-hidden="true"></i>
+            Forest
+        </p>
+        <div class="footer__lists">
+            <div class="footer__about-us">
+                <p class="footer__header-list">O nas</p>
+                <div class="footer__list">
+                    <p>Historia</p>
+                    <p>Parki</p>
+                    <p>Opinie</p>
+                </div>
+            </div>
+            <div class="footer__company">
+                <p class="footer__header-list">Nasza firma</p>
+                <div class="footer__list">
+                    <p>Praca</p>
+                    <p>Kadry</p>
+                    <p>Zarząd</p>
+                </div>
+            </div>
+            <div class="footer__dokuments">
+                <p class="footer__header-list">Dokumenty</p>
+                <div class="footer__list">
+                    <p>Wnioski</p>
+                    <p>Rexerwacje </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer__copy">
+        <p>&copy;2021 Forest Group Company Ltd.</p>
+    </div>
+</footer>
+    <script src="dist/js/main.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeuLUTzt02m0QkbM2SGxwkjKleuBDXZA8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+</body>
+</html>
