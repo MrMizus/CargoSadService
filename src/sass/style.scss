@@ -1,5 +1,6 @@
 @import './colors';
 @import './mixins';
+@import './animation';
 
 *,
 *::before,
@@ -22,8 +23,25 @@ body {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 800px;
 	width: 100%;
+}
+.arrow {
+	position: absolute;
+	border-top: 60px transparent;
+	z-index: 10;
+}
+.arrow-left {
+	top: 0;
+	border-top: 50px transparent;
+	border-bottom: 50px solid transparent;
+	border-left: 50px solid $pure-white;
+}
+.arrow-right {
+	bottom: 0;
+	right: 0;
+	border-bottom: 60px solid $pure-white;
+	border-left: 60px solid transparent;
 }
 
 .section-header {
@@ -102,7 +120,6 @@ body {
 }
 
 .header {
-
 	position: relative;
 	&__hero {
 		width: 100%;
@@ -198,6 +215,59 @@ body {
 	}
 }
 
-.hero {
-	
+.banner {
+	position: relative;
+	margin: 60px 0;
+	width: 100%;
+	height: 300px;
+	background-color: $main-color;
+	color: $pure-white;
+	overflow: hidden;
+
+	&__hero-img {
+		@include heroImages('/dist/img/highway.jpg');
+		background-attachment: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	&__hero-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.75);
+	}
+
+	&__line {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 60%;
+		height: 4px;
+		background-color: $pure-white;
+		border-radius: 8px;
+	}
+
+	&__text {
+		padding: 20px 40px;
+		text-transform: uppercase;
+		font-size: 3rem;
+		font-weight: bold;
+		z-index: 1;
+		&-do {
+			position: absolute;
+			top: 35%;
+			left: 40%;
+			transform: translate(-50%, -50%);
+		}
+
+		&-us {
+			position: absolute;
+			top: 65%;
+			left: 60%;
+			transform: translate(-50%, -50%);
+		}
+	}
 }
