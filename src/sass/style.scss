@@ -1,6 +1,6 @@
-@import './colors';
-@import './mixins';
-@import './animation';
+@use './colors';
+@use './mixins';
+@use './animation';
 
 *,
 *::before,
@@ -18,7 +18,7 @@ html {
 body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.6rem;
-	background-color: $pure-white;
+	background-color: colors.$pure-white;
 }
 
 .wrapper {
@@ -26,21 +26,21 @@ body {
 	max-width: 800px;
 	width: 100%;
 }
-.arrow {
+.corner {
 	position: absolute;
 	border-top: 60px transparent;
 	z-index: 10;
 }
-.arrow-left {
+.corner-left {
 	top: 0;
 	border-top: 50px transparent;
 	border-bottom: 50px solid transparent;
-	border-left: 50px solid $pure-white;
+	border-left: 50px solid colors.$pure-white;
 }
-.arrow-right {
+.corner-right {
 	bottom: 0;
 	right: 0;
-	border-bottom: 60px solid $pure-white;
+	border-bottom: 60px solid colors.$pure-white;
 	border-left: 60px solid transparent;
 }
 
@@ -48,7 +48,7 @@ body {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	margin: 50px 0 40px 0;
+	margin: 70px 0 50px 0;
 	text-transform: uppercase;
 
 	&__left-line,
@@ -57,7 +57,7 @@ body {
 		height: 5px;
 		margin: 10px 20px;
 		border-radius: 8px;
-		background-color: $main-color;
+		background-color: colors.$main-color;
 	}
 }
 
@@ -99,7 +99,7 @@ body {
 		right: 0;
 		height: 3px;
 		content: '';
-		background-color: $pure-white;
+		background-color: colors.$pure-white;
 		transition: width 0.3s;
 	}
 
@@ -124,7 +124,7 @@ body {
 	&__hero {
 		width: 100%;
 		height: 100vh;
-		@include heroImages('/dist/img/plane.jpg');
+		@include mixins.heroImages('/dist/img/plane.jpg');
 	}
 
 	&__shadow {
@@ -133,7 +133,7 @@ body {
 		left: 0;
 		width: 100%;
 		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.75);
+		background-color: rgba(30,30,30, 0.7);
 	}
 
 	&__text {
@@ -144,7 +144,7 @@ body {
 		width: 100%;
 		text-align: center;
 		font-size: 2rem;
-		color: $pure-white;
+		color: colors.$pure-white;
 
 		h1 {
 			font-weight: 400;
@@ -152,7 +152,7 @@ body {
 		}
 
 		span {
-			color: $main-color;
+			color: colors.$main-color;
 		}
 
 		p {
@@ -161,13 +161,13 @@ body {
 	}
 
 	&__link {
-		@include component($pure-white);
+		@include mixins.component(colors.$pure-white);
 		position: absolute;
+		padding: 10px;
 		bottom: 10%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 100px;
-		height: 50px;
+		width: 140px;
 	}
 }
 
@@ -176,33 +176,36 @@ body {
 
 	&__box {
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
 	}
 
 	&__img {
-		@include heroImages('/dist/img/about-us.jpg');
-		width: 100%;
+		@include mixins.heroImages('/dist/img/about-us.jpg');
+		width: 400px;
 		height: 200px;
 	}
 
 	&__content {
-		margin-top: 15px;
+		margin-top: 30px;
 		padding: 30px;
-		line-height: 30px;
+		line-height: 25px;
 
 		&-text {
-			text-align: justify;
+			margin-bottom: 20px;
+			text-align: left;
+			font-size: 1.6rem;
 		}
 		span {
-			color: $main-color;
+			color: colors.$main-color;
 			font-weight: bold;
 		}
 
 		&-blog {
+			margin: 20px;
 			text-align: center;
-			color: $main-color;
+			color: colors.$main-color;
 			font-size: 2rem;
 			font-weight: bold;
 		}
@@ -211,7 +214,7 @@ body {
 	&__link {
 		width: 100px;
 		height: 50px;
-		@include component($component-color);
+		@include mixins.component(colors.$component-color);
 	}
 }
 
@@ -220,12 +223,11 @@ body {
 	margin: 60px 0;
 	width: 100%;
 	height: 300px;
-	background-color: $main-color;
-	color: $pure-white;
+	color: colors.$pure-white;
 	overflow: hidden;
 
 	&__hero-img {
-		@include heroImages('/dist/img/highway.jpg');
+		@include mixins.heroImages('/dist/img/highway.jpg');
 		background-attachment: fixed;
 		width: 100%;
 		height: 100%;
@@ -246,7 +248,7 @@ body {
 		transform: translate(-50%, -50%);
 		width: 60%;
 		height: 4px;
-		background-color: $pure-white;
+		background-color: colors.$pure-white;
 		border-radius: 8px;
 	}
 
@@ -268,6 +270,41 @@ body {
 			top: 65%;
 			left: 60%;
 			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.shipping {
+	
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+		gap: 20px;
+	}
+
+	&__card {
+		color: colors.$dark;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: color 0.6s;
+		cursor: pointer;
+
+		svg {
+			width: 140px;
+			height: 100px;
+			fill: colors.$dark;
+			transition: fill 0.6s;
+		}
+
+		&:hover {
+			color: colors.$main-color;
+		}
+
+		&:hover svg {
+			fill: colors.$main-color;
 		}
 	}
 }
