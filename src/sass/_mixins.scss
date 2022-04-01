@@ -4,7 +4,7 @@
 	background-position: center;
 }
 
-@mixin component($color){
+@mixin component($color) {
 	position: relative;
 	padding-top: 12px;
 	color: $color;
@@ -57,5 +57,51 @@
 		left: -10px;
 		border-top: 3px solid $color;
 		border-left: 3px solid $color;
+	}
+}
+
+@mixin link($color) {
+
+	&:hover {
+		color: $color;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		transition: 0.3s;
+	}
+
+	&::before {
+		top: -2px;
+		left: -2px;
+		border-top: 0px solid $color;
+		border-left: 0px solid $color;
+	}
+
+	&::after {
+		bottom: -2px;
+		right: -2px;
+		border-bottom: 0px solid $color;
+		border-right: 0px solid $color;
+	}
+
+	&:hover::after,
+	&:hover::before {
+		width: 80%;
+		height: 80%;
+	}
+
+	&:hover::before {
+		border-top: 3px solid $color;
+		border-left: 3px solid $color;
+	}
+
+	&:hover::after {
+		border-bottom: 3px solid $color;
+		border-right: 3px solid $color;
 	}
 }
