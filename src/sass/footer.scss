@@ -1,0 +1,8 @@
+@use './colors';
+@use './mixins';
+
+.footer {
+    width: 100%;
+    height: 500px;
+    background-color: colors.$light-white;
+}
