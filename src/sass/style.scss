@@ -12,6 +12,7 @@
 
 html {
 	font-size: 62.5%;
+	scroll-padding-top: 120px;
 	scroll-behavior: smooth;
 }
 
@@ -48,7 +49,7 @@ body {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	margin: 100px 0 70px 0;
+	margin: 80px 0 60px 0;
 	text-transform: uppercase;
 
 	&__left-line,
@@ -222,8 +223,10 @@ body {
 
 .shipping {
 	&__cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
 		gap: 30px;
 	}
 
@@ -257,8 +260,10 @@ body {
 .custom-service {
 
 	&__cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: center;
 		gap: 30px;
 	}
 
@@ -275,6 +280,7 @@ body {
 		svg {
 			width: 140px;
 			height: 100px;
+			margin-bottom: 10px;
 			fill: colors.$dark;
 			transition: fill 0.6s;
 		}
@@ -286,6 +292,8 @@ body {
 		&:hover svg {
 			fill: colors.$main-color;
 		}
+
+
 	}
 }
 

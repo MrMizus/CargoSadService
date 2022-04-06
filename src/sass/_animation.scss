@@ -1,11 +1,11 @@
-@keyframes arrowMove {
+
+
+@keyframes navShow {
     from {
-        left: -60%;
-        top: 160%;
+        opacity: 0;
     }
 
     to {
-        left: 160%;
-        top: -60%;
+        opacity: 1;
     }
 }
