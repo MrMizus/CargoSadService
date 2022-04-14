@@ -3,30 +3,35 @@
 @use './animation';
 
 .shadow-nav {
-	background-color: rgba(0, 0, 0, 0.85);
+	background-color: #000;
 }
 
 .nav {
 	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
-	height: 80px;
 	transition: background-color 0.6s;
 	z-index: 1;
 	z-index: 2;
 
 	.logo {
-		position: absolute;
-		top: 0.6em;
-		left: 2em;
-		width: 5em;
-		height: 3.6em;
+		margin: 30px 20px;
+		width: 80px;
+
+		&-top {
+			fill: colors.$main-color;
+		}
+
+		&-bot {
+			fill: colors.$pure-white;
+		}
 	}
 
 	.burger-btn {
-		position: absolute;
-		top: 1.2em;
-		right: 1.6em;
-		padding: 1em;
+		margin-right: 20px;
+		padding: 10px;
 		background: none;
 		border: 1px solid transparent;
 		cursor: pointer;
@@ -71,19 +76,17 @@
 	}
 
 	&__links {
-		position: absolute;
-		top: 1.4em;
-		right: 3.6em;
-		display: flex;
+		display: none;
 		justify-content: center;
 		align-items: center;
-		gap: 0.8em;
+		gap: 20px;
+		margin-right: 20px;
+		list-style-type: none;
 	}
 
 	&__link {
-		display: none;
 		position: relative;
-		padding: 10px 10px;
+		padding: 10px 40px;
 		width: 162px;
 		@include mixins.link(colors.$secondary-color);
 		text-decoration: none;
@@ -94,7 +97,7 @@
 	}
 
 	&:hover {
-		background-color: rgba(0, 0, 0, 0.85);
+		background-color: #000;
 	}
 }
 
@@ -102,18 +105,17 @@
 	display: none;
 	opacity: 0;
 	position: absolute;
-	top: 38px;
-	right: 524px;
-	width: 162px;
-	padding-top: 20px;
+	width: 154px;
+	margin-top: 10px;
+	padding-top: 10px;
 
 	&__menu {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 10px 0;
-		background-color: rgba(0, 0, 0, 0.85);
+		padding: 12px 0;
+		background-color: #000;
 	}
 	&__link {
 		padding: 10px 0;
@@ -139,14 +141,15 @@
 	animation: navShow 0.6s forwards;
 }
 
+
 @media screen and (min-width: 1280px) {
 	.nav {
 		.burger-btn {
 			display: none;
 		}
 
-		&__link {
-			display: block;
+		&__links {
+			display: flex;
 		}
 	}
 }
