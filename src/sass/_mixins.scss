@@ -93,15 +93,16 @@
 	&:hover::before {
 		width: 80%;
 		height: 80%;
+		z-index: -5;
 	}
 
 	&:hover::before {
-		border-top: 3px solid $color;
-		border-left: 3px solid $color;
+		border-top: 1px solid $color;
+		border-left: 1px solid $color;
 	}
 
 	&:hover::after {
-		border-bottom: 3px solid $color;
-		border-right: 3px solid $color;
+		border-bottom: 1px solid $color;
+		border-right: 1px solid $color;
 	}
 }

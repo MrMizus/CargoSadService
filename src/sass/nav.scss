@@ -75,24 +75,31 @@
 		}
 	}
 
-	&__links {
+	&__items {
 		display: none;
 		justify-content: center;
 		align-items: center;
-		gap: 20px;
+		gap: 30px;
 		margin-right: 20px;
 		list-style-type: none;
 	}
 
-	&__link {
-		position: relative;
-		padding: 10px 40px;
-		width: 162px;
+	&__item {
 		@include mixins.link(colors.$secondary-color);
-		text-decoration: none;
+		position: relative;
+		padding: 10px 0;
 		text-transform: uppercase;
 		text-align: center;
-		font-size: 1.4rem;
+		text-decoration: none;
+
+		&:hover .nav__link {
+			color: colors.$secondary-color;
+		}
+	}
+
+	&__link {
+		padding: 10px 30px;
+		text-decoration: none;
 		color: colors.$pure-white;
 	}
 
@@ -101,11 +108,12 @@
 	}
 }
 
-.nav-shipping {
+.eject {
 	display: none;
 	opacity: 0;
 	position: absolute;
-	width: 154px;
+	left: 0;
+	width: 100%;
 	margin-top: 10px;
 	padding-top: 10px;
 
@@ -113,11 +121,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		height: 100vh;
+		max-height: 165px;
 		align-items: center;
 		padding: 12px 0;
 		background-color: #000;
 	}
-	&__link {
+	&__item {
 		padding: 10px 0;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -136,11 +146,10 @@
 	}
 }
 
-.shipping-menu:hover ~ .nav-shipping {
+.eject-parent:hover > .eject {
 	display: block;
 	animation: navShow 0.6s forwards;
 }
-
 
 @media screen and (min-width: 1280px) {
 	.nav {
@@ -148,10 +157,8 @@
 			display: none;
 		}
 
-		&__links {
+		&__items {
 			display: flex;
 		}
 	}
 }
-
-
