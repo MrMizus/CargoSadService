@@ -9,3 +9,23 @@
         opacity: 1;
     }
 }
+
+@keyframes burgeMenuShow {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes burgeMenuHide {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
+}

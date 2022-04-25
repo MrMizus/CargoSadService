@@ -1,14 +1,34 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const btnBurger = document.querySelector('.burger-btn')
-    const nav = document.querySelector('.nav')
+const burgerBtn = document.querySelector('.burger-btn');
+const burgerMenu = document.querySelector('.burger-menu');
+const burgerItems = document.querySelectorAll('.burger-menu__link');
+const nav = document.querySelector('.nav');
+const logo = document.querySelector('.logo');
 
-    const addShadow = () => {
-        if (window.scrollY >= 200) {
+const showBurgerMenu = () => {
+	burgerMenu.classList.toggle('burger-menu__show');
+	burgerMenu.classList.toggle('burger-menu__hide');
+
+	burgerItems.forEach((item) => {
+		item.addEventListener('click', () => {
+			burgerMenu.classList.add('burger-menu__hide');
+			burgerMenu.classList.remove('burger-menu__show');
+		});
+	});
+
+	logo.addEventListener('click', () => {
+		burgerMenu.classList.add('burger-menu__hide');
+		burgerMenu.classList.remove('burger-menu__show');
+	});
+};
+burgerBtn.addEventListener('click', showBurgerMenu);
+document.addEventListener('DOMContentLoaded', function () {
+	const addShadow = () => {
+		if (window.scrollY >= 200) {
 			nav.classList.add('shadow-nav');
 		} else {
 			nav.classList.remove('shadow-nav');
 		}
-    }
+	};
 
-    window.addEventListener('scroll', addShadow);
+	window.addEventListener('scroll', addShadow);
 });
