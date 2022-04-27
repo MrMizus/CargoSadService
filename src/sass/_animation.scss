@@ -29,3 +29,9 @@
         left: 100%;
     }
 }
+
+@keyframes loading {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -3,10 +3,12 @@ const burgerMenu = document.querySelector('.burger-menu');
 const burgerItems = document.querySelectorAll('.burger-menu__link');
 const nav = document.querySelector('.nav');
 const logo = document.querySelector('.logo');
+const loader = document.querySelector('.loader-wrapper')
 
 const showBurgerMenu = () => {
 	burgerMenu.classList.toggle('burger-menu__show');
 	burgerMenu.classList.toggle('burger-menu__hide');
+	burgerMenu.classList.remove('burger-menu__opacity');
 
 	burgerItems.forEach((item) => {
 		item.addEventListener('click', () => {
@@ -32,3 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	window.addEventListener('scroll', addShadow);
 });
+
+window.addEventListener('load', function() {
+	loader.style.display = "none";
+})
