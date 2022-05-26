@@ -1,0 +1,34 @@
+@media screen and (min-width: 1280px) {
+	.nav {
+		&__burger-btn {
+			display: none;
+		}
+
+		&__burger-menu {
+			display: none;
+		}
+
+		&__items {
+			display: flex;
+		}
+	}
+
+	.service {
+		&__cards {
+			gap: 80px;
+		}
+	}
+
+	.contact {
+		&__test-shipping {
+			flex-direction: row;
+			gap: 30px;
+		}
+	}
+
+	.footer {
+		&__left {
+			order: -1;
+		}
+	}
+}
